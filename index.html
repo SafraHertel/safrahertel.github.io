@@ -1,63 +1,147 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>HTML internal links</title>
-    </head>
-    <body>
+  <head>
+   <meta charset="utf-8">
+    <title>Safi's Website</title>
+    <style>
+      a {
+        color: silver;
+      }
+      #toc {
+        position: fixed;
+        right: 20px;
+        top: 0;
+        width: 230px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 24px;
+        border-radius: 10px;
+        z-index: 1000;
+        overflow-y: auto;
+        overflow-x: hidden;
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+      }
+      #toc:active {
+        cursor: grabbing;
+      }
+      #toc h3 {
+        color: silver;
+        margin-top: 0;
+        text-align: center;
+        font-size: 18px;
+      }
+      #toc ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-grow: 1;
+      }
+      #toc li {
+        margin: 10px 0;
+      }
+      #toc a {
+        color: silver;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      #toc a:hover {
+        text-decoration: underline;
+      }
+      #toc-toggle-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: black;
+        border: 2px solid silver;
+        border-radius: 8px;
+        color: silver;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        transform-origin: center;
+      }
+      #toc-toggle-btn:hover {
+        background-color: #1a1a1a;
+      }
+      #toc-toggle-btn.closed {
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+  <body style="background-image: url('background.jpg'); background-size: cover; background-position: center; color: silver;">
+    <button id="toc-toggle-btn">›</button>
+    <!-- Table of Contents -->
+    <div id="toc">
+      <h3>Contents</h3>
+      <ul>
+        <li><a href="#game-features">Game Features</a></li>
+        <li><a href="#storyline">Storyline</a></li>
+        <li><a href="#characters">Main Characters</a></li>
+        <li><a href="#areas-history">Areas and History of Pharloom</a></li>
+        <li><a href="#lore">Lore</a></li>
+      </ul>
+    </div>
     
-        <h1>HTML: HyperText Markup Language</h1>
-        <ul>
-            <li><a href="#web-history">History of the web</a></li>
-            <li>History of HTML versions</li>
-        </ul>
-        <p>Tim Berners-Lee invented the first browser at CERN, to enable researchers to share their research with eachother.</p>
+    <!-- Your HTML here -->
+    <h1 style="font-size: 3em;">This webpage is all about Hollow Knight: Silksong!</h1>
+    <h2 style="font-size: 2em;">Disclaimer: This webpage includes lore, gameplay, characters, and many spoilers for Silksong. I highly advise you read this only if you have completed the first game, and all three acts in Silksong. However, if you haven't played Silksong yet but wish to proceed for information and lore about Silksong before playing it, you can read this webpage or learn evenmore about Silksong <a href="https://en.wikipedia.org/wiki/Hollow_Knight:_Silksong"> here.</a></h2>
+    <img src="https://preview.redd.it/is-there-a-lore-reason-whys-shes-called-hornet-v0-fc1hjdl74ftd1.jpeg?width=640&crop=smart&auto=webp&s=ba098d9f345e0da5246a8dfaf0ac73a8cd570ebd" />
+    <h1 id="game-features">Game Features:</h1>
+    <ul style="font-size:28px; line-height:1.6; list-style-position: inside;">
+      <li>Playable character: Hornet, instead of the Knight from the first game.</li>
+      <li>New setting: Pharloom, a much greener counterpart to Hallownest. Full of silkflies who britghen your jorney and many others up through Pharloom.</li>
+      <li>Over 150 new enemies and dozens of unique bosses can be encountered on your journey, ranging in all different sizes.</li>
+      <li>Silk skills, tools, crests, and silk all replace the soul-based mechanics of the first game.</li>
+      <li>Many new areas to explore, each looking much different form each-other compared to Hollow Knight.</li>
+    </ul>
     
-        <p>
-        <img src="https://www.kasandbox.org/programming-images/misc/tim-berners-lee-webpage.png" width="200">
-        <br>Image courtesy CERN    
-        </p>
-        
-        <h2 id="web-history">History of the web</h2>
-        <ul>
-            <li><strong>1989: The motivation</strong>
-                <p>CERN Physicist Tim Berners-Lee needed “a pool of information which could grow and evolve with the organisation and the projects it describes.”
-                <br>
-                <a href="http://www.w3.org/History/1989/proposal.html">Read the original proposal</a>
-                </p>
-            </li>
-            <li>
-                <strong>1989: The invention</strong>
-                <p>Berners-Lee invented the World Wide Web, HTTP, and wrote the <a href="http://www.w3.org/History/19921103-hypertext/hypertext/WWW/TheProject.html">first HTML page</a>.
-                </p>
-            </li>
-            <li>
-                <strong>1993: It starts small</strong>
-                <p>Berners-Lee presented the WWW at the IETF conference in a small BoF session, which is mentioned in the <a href="http://www.ietf.org/proceedings/26.pdf">proceedings</a>.</p>
-            </li>
-            <li>
-                <strong>1993: It gets bigger!</strong>
-                <p>NCSA creates the free <a href="http://www.ncsa.illinois.edu/enabling">Mosaic" browser</a>, and adds bookmarks, images, and a better UI.</p>
-            </li>
-            <li>
-                <strong>1993+: The explosion</strong>
-                <p>The number of domains increased as the internet started being <a href="http://en.wikipedia.org/wiki/History_of_the_Internet#Opening_the_network_to_commerce">used by commerce</a>.</p>
-            </li>
-            <li><strong>1994: The World Wide Web Consortium</strong>
-                <p>Berners-Lee founds the W3C to standardize HTML for all browsers to follow.</p>
-            </li>
-        </ul>
-        
-        <h2>History of HTML versions</h2>
-        <ul>
-            <li>1995: HTML 2.0</li>
-            <li>1997 (Jan): HTML 3.2</li>
-            <li>1997 (Dec): HTML 4.0</li>
-            <li>1999: HTML 4.01</li>
-            <li>2004: "HTML5" is proposed by WHATWG, a new committee</li>
-            <li>2008: HTML5 is adopted by W3C as a standard.</li>
-        </ul>
-        <p>Read more on <a href="http://en.wikipedia.org/wiki/HTML#HTML_versions_timeline">Wikipedia</a></p>
-        
+    
+      <h1 id="storyline">Storyline:</h1>
+     <h3> Hornet, the protagonist of Silksong, gets thrown into the world of Pharloom after the events of the first game by some silk infested Envoys. (See: the bugs of Pharloom.) After entrapping her in a rune cage, which prevents Hornet from using her silk, the enchanted Envoys bring her through the desolate plains suronding Hallownest into the much lusher of Pharloom. Once indside, a silkfly lands on the rune cage, breaking the enchantment on it. Hornet immedeatly takes the chance she was given to use her silk to break the rock below them and set herself free. After waking from the fall, Hornet travels through the first area of Silksong, Moss Grotto. (See: Areas and History of Pharloom.) After meeting The Chapel Maid, the first bug you can talk to, Hornet learns that something has taken control of most of the bugs of Pharloom, controlling them all through silk, like a puppeteer. Hornet then vows to find the bug behind the strings and end their twisted reign.  </h3>
+ 
+
+
+    <h1 style ="font-size: 2em;" id="characters">Main characters:</h1>
+    <h3>Hornet: The protagonist of Silksong, Hornet is a skilled fighter who uses her silk to fight and traverse the world of Pharloom. She is the daughter of Herrah the Beast, one of the three Dreamers from the first game, and the Pale King, the desseased ruler of Hallownest. <h3>
+    <h3>Grand Mother Silk: the main antagonist of Silksong, Grand Mother Silk is a powerful entity who lies at the top of the Citadel, where she uses her silk to spread through the minds of the bugs of Pharloom.</h3>
+    <h3>Lace: The secondary antagonist of Silksong, Lace is a powerful bug who is made purley from silk. She is tehcnically the second daughter of Grand Mother Silk, though not biologically, as Grand Mother Silk wove her into existance with her own hands. In game, you meet Lace five times altoghether and fight her three times out of those five. She mistakenly belives Grand Mother Silk wants to replace her with you the same way she replaced Phantom, her older sister. Lace prevents you from harm accedentally several times within Silksong whislst trying to keep you away from her mother. One time is at the beggining, When a silkfly lands on the rune cage, breaking the enchantment on it. Lace most likely sent that silkfly, as we've seen she can control them, right before your first fight with her. Anouther is if you entrap Grand Mother silk in the void snare, she will try to drag to with her down into the void. Lace will then, mistakingly thinking Grand Mother silk is giving you...I don't know, a hug or somthing, actually cut off the arm of her mother holding Hornet, saving Hornet from the void and falling in herself. </h3>
+    <h3>Phantom: the first "child" of Grand Mother Silk, Phantom stays in the crossroads between Bilewater, the Citadel, and the Underworks. She plays an organ, which creates pressurized air vents throughout the area and farther through the Citadel. Lace replaced Phamtom for the spot in their mother's heart, and now Phantom wastes slowly away, not being supplied silk anymore by her mother. Without a will to live, Phantom fights you once you get to her arena to simply go down swinging, as her needolin dialodge and her pose when you stun her suggest.</h3>
+
+    <h2 style="margin-top: 2em;" id="areas-history">Areas and History of Pharloom:</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2pcXscftwVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h1 id="lore">Lore:</h1>
+
+    
+    <script>
+      const toc = document.getElementById('toc');
+      const toggleBtn = document.getElementById('toc-toggle-btn');
+
+      let tocOpen = true;
+      const openRight = 20;
+      const hiddenRight = -220;
+
+      function setTOCPosition(open) {
+        tocOpen = open;
+        toc.style.right = open ? openRight + 'px' : hiddenRight + 'px';
+        toggleBtn.classList.toggle('closed', !open);
+        toggleBtn.textContent = '›';
+      }
+
+      toggleBtn.addEventListener('click', () => {
+        setTOCPosition(!tocOpen);
+      });
+
+      // Initialize
+      setTOCPosition(true);
+    </script>
     </body>
-</html>
+</html> 
